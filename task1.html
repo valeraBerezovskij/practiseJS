@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>traffic light</title>
+</head>
+
+<body>
+    <section>
+        <div class="traffic-light">
+            <div class="light"></div>
+            <div class="light"></div>
+            <div class="light"></div>
+        </div>
+        <button class="btn-next" onclick="nextLight()">NEXT</button>
+    </section>
+
+    <script>
+        let activeLight;
+
+        function extinction(lights) {
+            lights.forEach(light => {
+                light.style.background = "grey";
+            });
+        }
+
+        function nextLight() {
+            let lights = document.querySelectorAll(".light");
+            switch (activeLight) {
+                case undefined:
+                    activeLight = 0; extinction(lights);
+                    lights[activeLight].style.background = "red";
+                    break;
+                case 0:
+                    activeLight = 1; extinction(lights);
+                    lights[activeLight].style.background = "yellow";
+                    break;
+                case 1:
+                    activeLight = 2; extinction(lights);
+                    lights[activeLight].style.background = "green";
+                    break;
+                case 2:
+                    activeLight = 0; extinction(lights);
+                    lights[activeLight].style.background = "red";
+                    break;
+            }
+        }
+    </script>
+</body>
+
+</html>

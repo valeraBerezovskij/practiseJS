@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>listOfBooks</title>
+</head>
+
+<body>
+    <section>
+        <ol>
+            <li class="def">"JavaScript for Kids: A Playful Introduction to Programming" by Nick Morgan </li>
+            <li class="def">"Eloquent JavaScript: A Modern Introduction to Programming" by Marijn Haverbeke </li>
+            <li class="def">"JavaScript: The Good Parts" by Douglas Crockford </li>
+            <li class="def">"Programming JavaScript Applications: Robust Web Architecture with Node, HTML5, and Moderns
+                JS Libraries" by Eric Elliott </li>
+            <li class="def">"Effective JavaScript: 68 Specific Ways to Harness the Power of JavaScript" by David Herman
+            </li>
+            <li class="def">"JavaScript: The Definitive Guide" by David Flanagan </li>
+            <li class="def">"You Don't Know JS" by Kyle Simpson </li>
+        </ol>
+    </section>
+
+    <script>
+        let lis = document.querySelectorAll("li");
+        lis.forEach(li => {
+            li.addEventListener("mouseover", mouseOverHander);
+            li.addEventListener("mouseout", mouseOutHander);
+        });
+        
+        function mouseOverHander(e) {
+            e.target.classList.add("def-super");
+        }
+
+        function mouseOutHander(e) {
+            e.target.classList.remove("def-super");
+        }
+    </script>
+</body>
+
+</html>
